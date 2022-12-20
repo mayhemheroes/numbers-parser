@@ -143,7 +143,7 @@ class EnhancedFuzzedDataProvider(atheris.FuzzedDataProvider):
     @contextlib.contextmanager
     def ConsumeTemporaryFile(self, suffix: str, all_data: bool = False, as_bytes: bool = True) -> io.StringIO:
         if all_data:
-            file_data = self.ConsumeRandomBytes() if as_bytes else self.ConsumeRemainingString()
+            file_data = self.ConsumeRemainingBytes() if as_bytes else self.ConsumeRemainingString()
         else:
             file_data = self.ConsumeRandomBytes() if as_bytes else self.ConsumeRandomString()
 
