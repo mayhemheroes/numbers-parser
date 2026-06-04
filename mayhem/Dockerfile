@@ -1,5 +1,6 @@
-# Build Stage
-FROM fuzzers/atheris:2.0.7-python3.9
+FROM python:3.11-slim
+
+RUN pip install atheris
 
 ADD . /src
 WORKDIR /src
